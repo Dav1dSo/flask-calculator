@@ -6,7 +6,6 @@ calculators_bp = Blueprint('calculators', __name__)
 @calculators_bp.post("/calculator")
 def calculator():
     obj = Calculator1()
+    response = obj.calculate(request)
     
-    obj.calculate(request)
-    
-    return {'msg': 'Deu bom!'}
+    return response, 200
