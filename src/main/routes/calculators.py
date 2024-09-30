@@ -1,22 +1,20 @@
 from flask import Blueprint, request
-from src.calculators.calculator_1 import Calculator_1
-from src.calculators.calculator_2 import Calculator_2
-from src.drivers.numpy_handler import HandleNumpy
+
+from factories.calculator_1 import Calculator_1
+from factories.calculator_2 import Calculator_2
 
 calculators_bp = Blueprint("calculators", __name__)
 
 
 @calculators_bp.post("/calculator/1")
 def calculator():
-    obj = Calculator_1()
-    response = obj.calculate(request)
 
+    calc = Calculator_1()
+    response = calc.calculate()
     return response, 200
 
-
-
+@calculators_bp.post("/calculator/2")
 def calculator2():
-    numpy_handler = HandleNumpy()
-    calc = Calculator_2(numpy_handler)
+    calc = Calculator_2()
     response = calc.calculate(request)
     return response, 200
