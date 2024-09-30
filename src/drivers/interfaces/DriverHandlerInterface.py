@@ -1,7 +1,7 @@
-from abc import ABC, abstractclassmethod
+from abc import ABC, abstractmethod
 from typing import List
 
 class DriverHandlerInterface(ABC):
-    @abstractclassmethod
+    @abstractmethod
     def standart_derivation(self, numbers: List[float]) -> float:
         pass

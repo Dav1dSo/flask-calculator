@@ -1,4 +1,4 @@
-from .calculator_1 import Calculator1
+from .calculator_1 import Calculator_1
 from pytest import raises
 
 class MockBody:
@@ -7,7 +7,7 @@ class MockBody:
         
 def test_calculate():
     mockRequest = MockBody(body={'number': 15})
-    calculator1 = Calculator1()
+    calculator1 = Calculator_1()
     
     response = calculator1.calculate(mockRequest)
     
@@ -20,7 +20,7 @@ def test_calculate():
 
 def test_verify_body():
     mockRequest = MockBody(body={'numbe': 15})
-    calculator1 = Calculator1()
+    calculator1 = Calculator_1()
     
     with raises(Exception) as excInfo:
         response = calculator1.calculate(mockRequest)

@@ -2,7 +2,7 @@ from flask import request
 from typing import Dict
 
 
-class Calculator1:
+class Calculator_1:
     def calculate(self, request: request) -> Dict:
         body = request.json
         input_data = self.__verify_body(body)
