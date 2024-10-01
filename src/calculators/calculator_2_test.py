@@ -1,6 +1,7 @@
-from .calculator_2 import Calculator_2
-from drivers.numpy_handler import HandleNumpy
-from drivers.interfaces.DriverHandlerInterface import DriverHandlerInterface
+from src.calculators.calculator_2 import Calculator_2
+
+from src.drivers.numpy_handler import HandleNumpy
+from src.drivers.interfaces.DriverHandlerInterface import DriverHandlerInterface
 
 class MockBody:
     def __init__(self, body: dict) -> None:
@@ -10,7 +11,8 @@ class MockBody:
 class MockdriverHandler(DriverHandlerInterface):
     def standart_derivation(self, numbers: list[float]) -> float:
         return 3
-
+    def variance():
+        pass
 
 def test_calculate_integration():
     mockRequest = MockBody({"Numbers": [2.12, 4.62, 1.32]})

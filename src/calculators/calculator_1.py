@@ -1,6 +1,5 @@
-from flask import request
+from flask import request 
 from typing import Dict
-
 
 class Calculator_1:
     def calculate(self, request: request) -> Dict:

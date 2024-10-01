@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 
-from factories.calculator_1 import Calculator_1
-from factories.calculator_2 import Calculator_2
+from src.factories.calculator_1 import Calculator_1
+from src.factories.calculator_2 import Calculator_2
 
 calculators_bp = Blueprint("calculators", __name__)
 
@@ -12,6 +12,7 @@ def calculator():
     calc = Calculator_1()
     response = calc.calculate()
     return response, 200
+
 
 @calculators_bp.post("/calculator/2")
 def calculator2():
